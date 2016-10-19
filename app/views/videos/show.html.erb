@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cat:</strong>
+  <%= @video.cat %>
+</p>
+
+<p>
+  <strong>Res:</strong>
+  <%= @video.res %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @video.title %>
+</p>
+<p>
+  <strong>Submitter</strong>
+  <%= @video.user.username %>
+</p>
+
+Quality  : <%= rating_for @video, 'quality', disable_after_rate: false %>
+Girl : <%= rating_for @video, 'girl', disable_after_rate: false %>
+
+<%= video_tag @video.movie.url,controls: true %>
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

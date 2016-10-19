@@ -1,0 +1,381 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require video-js
+ */
+
+a{
+  text-decoration: none;
+  color: #333;
+  text-decoration: underline;
+}
+body{
+  height: 100%;
+  width: 100%;
+  background-color: #f9ebd2;
+  margin: 0;
+}
+h2{
+  text-align: center;
+}
+ /*********************HEADER********************/
+
+ #header{
+ 	background-color:#ffccff;
+ 	margin: 0;
+ 	padding: 0;
+ 	float: top;
+ 	font-family: 'Handlee', cursive;
+ }
+ #head_links{
+ 	display: block;
+ }
+ #head_title{
+ 	font-family: 'Dancing Script', cursive;
+ 	font-size: 3em;
+ 	display: block;
+ 	margin-right: 0px;
+ }
+ #header a:hover{
+ 	color: white;
+ }
+
+
+ ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #333;
+ }
+
+ li {
+     float: left;
+ }
+
+ li a, .dropbtn {
+     display: inline-block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+ }
+
+ li a:hover, .dropdown:hover .dropbtn {
+     background-color: #999;
+ }
+
+ li.dropdown {
+     display: inline-block;
+ }
+
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ }
+
+ .dropdown-content a {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     text-align: left;
+ }
+
+ .dropdown-content a:hover {background-color: #ffccff}
+
+ .dropdown:hover .dropdown-content {
+     display: block;
+ }
+
+
+
+
+ /*********************HEADER********************/
+
+
+ /*********************GALLERY********************/
+
+ .flickr_pagination {
+   text-align: center;
+   padding: 0.3em;
+   cursor: default; }
+   .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+     padding: 0.2em 0.5em; }
+   .flickr_pagination .disabled {
+     color: #aaaaaa; }
+   .flickr_pagination .current {
+     font-style: normal;
+     font-weight: bold;
+     color: #ff0084; }
+   .flickr_pagination a {
+     border: 1px solid #dddddd;
+     color: #333;
+     text-decoration: none; }
+     .flickr_pagination a:hover, .flickr_pagination a:focus {
+       border-color: #003366;
+       background: #ffccff;
+       color: #ff0084; }
+   .flickr_pagination .page_info {
+     color: #aaaaaa;
+     padding-top: 0.8em; }
+   .flickr_pagination .previous_page, .flickr_pagination .next_page {
+     border-width: 2px; }
+   .flickr_pagination .previous_page {
+     margin-right: 1em; }
+   .flickr_pagination .next_page {
+     margin-left: 1em; }
+
+#full_gallery{
+  width: 100%;
+  height: 200%;
+  display: block;
+  overflow: auto;
+}
+
+.gallery{
+  width: 500px;
+  height: 400px;
+  margin: 0;
+  float: left;
+  object-fit: cover;
+	object-position: 50% 25%;
+}
+.gallery:hover{
+   -webkit-filter: blur(5px);
+   -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+       -ms-transition: all 1s ease;
+           transition: all 1s ease;
+}
+.gallery:hover +span.text-content span {
+  opacity: 1;
+  -webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
+}
+.gallery:hover + span.text-content{
+  opacity: 1;
+  -webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
+}
+span.text-content:hover{
+  opacity: 1;
+  -webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
+}
+
+span.text-content span:hover{
+  opacity: 1;
+  -webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
+}
+
+
+.gallery_link{
+  width: 500px;
+  height: 400px;
+  display: inline-block;
+  float: left;
+}
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 50px;
+  margin-left: 185px;
+  margin-top:  140px;
+  position: absolute;
+  width: 150px;
+  opacity: 0;
+  font-size: 20px;
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 0;
+  font-size: 20px;
+}
+
+.blurred{
+ -webkit-filter: blur(5px);
+
+}
+
+
+/*********************GALLERY********************/
+
+
+/*********************IMAGE SHOW********************/
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+   border-radius: 5px;
+   cursor: pointer;
+   transition: 0.3s;
+}
+
+#myImg:hover {
+  -webkit-filter: brightness(+120%);
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+/* The Modal (background) */
+.modal {
+   display: none; /* Hidden by default */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+   margin: auto;
+   display: block;
+   min-width: 100%;
+   min-height:100%;
+   object-fit: cover;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+   margin: auto;
+   display: block;
+   width: 80%;
+   max-width: 700px;
+   text-align: center;
+   color: #ccc;
+   padding: 10px 0;
+   height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+   -webkit-animation-name: zoom;
+   -webkit-animation-duration: 0.6s;
+   animation-name: zoom;
+   animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+   from {-webkit-transform:scale(0)}
+   to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+   from {transform:scale(0)}
+   to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+   position: absolute;
+   top: 15px;
+   right: 35px;
+   color: #f1f1f1;
+   font-size: 40px;
+   font-weight: bold;
+   transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+   color: #bbb;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+   .modal-content {
+       width: 100%;
+   }
+}
+
+
+.show_pic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 70em;
+  max-width: 100%;
+}
+#ratings{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: .8em;
+}
+.star{
+  display: inline-block;
+}
+.right_stars{
+  margin-left: 20px;
+  display: inline-block;
+}
+#des{
+  font-size: 3.5em;
+  text-align: center;
+  color: #333;
+  font-family: 'Handlee', cursive;
+
+}
+/*********************IMAGE SHOW********************/
+
+
+
+
+/*********************FORM INPUTS********************/
+#full_form{
+  width: 50%;
+  max-width: 765px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.form-inputs{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-inputs label{
+  display: block;
+  text-align: left;
+
+}
+
+.form-inputs input{
+  width: 100%;
+  padding: 12px 20px;
+}

@@ -1,0 +1,39 @@
+<%if false%>
+<%= form_for(@image) do |f| %>
+  <% if @image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nsfw %><br>
+    <%= f.check_box :nsfw %>
+  </div>
+  <div class="field">
+    <%= f.label :cat %><br>
+    <%= f.text_field :cat %>
+  </div>
+  <div class="field">
+    <%= f.label :res %><br>
+    <%= f.text_field :res %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%end%>
+<%= simple_form_for @image, url: images_path do |i|%>
+  <%= i.input :title %>
+  <%= i.input :nsfw,label:'NSFW?' %>
+  <%= i.input :cat,label:'Category',collection:['Pretty Girls','Real Girls','Blowjob','Cumshot','Bondage'] %>
+  <%= i.input :res,label:'Resolution' %>
+  <%= i.input :girl, as: :file %>
+  <%= i.button :submit %>
+<%end%>

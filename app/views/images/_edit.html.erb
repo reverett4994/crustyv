@@ -1,0 +1,8 @@
+<%= simple_form_for @image do |i|%>
+  <%= i.input :title %>
+  <%= i.input :nsfw,label:'NSFW?' %>
+  <%= i.input :cat,label:'Category',collection:['Pretty Girls','Real Girls','Blowjob','Cumshot','Bondage'] %>
+  <%= i.input :res,label:'Resolution' %>
+  <%= i.input :girl, as: :file %>
+  <%= i.button :submit %>
+<%end%>

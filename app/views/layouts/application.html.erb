@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrustyV.XYZ</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="header">
+	<div id='head_links'>
+    <%= link_to 'New Image', new_image_path %>
+    <%= link_to 'New Video', new_video_path %>
+	</div>
+	<%= link_to 'CrustyV.XYZ',root_path, id: 'head_title'%>
+
+
+
+
+
+  <div id='login'>
+    <% if user_signed_in? %>
+    <div id='username'>Hello: <%= link_to current_user.username, "/users/#{current_user.id}"%></div> 	&nbsp; 	&nbsp;
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  <% else %>
+    <%= link_to('Login', new_user_session_path)  %>
+  <% end %>
+  </div>
+
+</div>
+<%if false%>
+<ul class="topnav" id="myTopnav">
+  <li>
+    <%= link_to 'Home', "#" %>
+    <div class='nav_links'>
+      <%= link_to 'Home', "#" %>
+      <%= link_to 'Home', "#" %>
+      <%= link_to 'Home', "#" %>
+    </div>
+  </li>
+  <li><%= link_to 'Pictures', images_path %></li>
+  <li><%= link_to 'Videos', videos_path %></li>
+
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+</ul>
+<%end%>
+<ul>
+  <li><%= link_to 'Home', "#" %></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Pictures</a>
+    <div class="dropdown-content">
+      <%= link_to 'All', images_path(sort:'all') %>
+      <%= link_to 'Pretty Girls', images_path(sort:'pretty') %>
+      <%= link_to 'Real Girls', images_path(sort:'real') %>
+      <%= link_to 'Bondage', images_path(sort:'bondage') %>
+      <%= link_to 'BlowJob', images_path(sort:'blowjob') %>
+      <%= link_to 'CumShot', images_path(sort:'cumshot') %>
+
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Videos</a>
+    <div class="dropdown-content">
+      <%= link_to 'All', videos_path %>
+      <%= link_to 'Forced Orgasm', videos_path(sort:'forced') %>
+      <%= link_to 'Blowjob', videos_path(sort:'blowjob') %>
+      <%= link_to 'Struggle Fuck', videos_path(sort:'struggle') %>
+      <%= link_to 'Standerd', videos_path(sort:'standerd') %>
+
+    </div>
+  </li>
+</ul
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= yield %>
+</body>
+</html>
