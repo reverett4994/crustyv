@@ -4,27 +4,43 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
+    if session[:sort] == params[:sort]
+      @seed=session[:seed]
+    else
+      @seed=rand(1..100)
+      session[:seed]=@seed
+      session[:sort] = params[:sort]
+    end
     if params[:sort]
       @sort=params[:sort]
       if @sort=='forced'
-        @videos =Video.where('cat LIKE ?','Forced Orgasm')
+        @videos =Video.where('cat LIKE ?','Forced Orgasm').order("RAND(#{@seed})").paginate(:page => params[:page])
       elsif @sort=='blowjob'
-        @videos =Video.where('cat LIKE ?','Blowjob')
+        @videos =Video.where('cat LIKE ?','Blowjob').order("RAND(#{@seed})").paginate(:page => params[:page])
       elsif @sort=='struggle'
-        @videos =Video.where('cat LIKE ?','Struggle Fuck')
+        @videos =Video.where('cat LIKE ?','Struggle Fuck').order("RAND(#{@seed})").paginate(:page => params[:page])
       elsif @sort=='standerd'
-        @videos =Video.where('cat LIKE ?','Standerd')
+        @videos =Video.where('cat LIKE ?','Standerd').order("RAND(#{@seed})").paginate(:page => params[:page])
       end
     else
-    @videos = Video.all
+    @videos = Video.all.order("RAND(#{@seed})").paginate(:page => params[:page])
     end
-    @videos = @videos.paginate(:page => params[:page])
+
 
   end
 
   # GET /videos/1
   # GET /videos/1.json
   def show
+    if @video.cat == 'Forced Orgasm'
+      @search='forced'
+    elsif @video.cat == 'Blowjob'
+      @search='blowjob'
+    elsif @video.cat == 'Struggle Fuck'
+      @search='struggle'
+    elsif @video.cat == 'Standerd'
+      @search='standerd'
+    end
   end
 
   # GET /videos/new
@@ -71,7 +87,7 @@ class VideosController < ApplicationController
   def destroy
     @video.destroy
     respond_to do |format|
-      format.html { redirect_to videos_url, notice: 'Video was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Video was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

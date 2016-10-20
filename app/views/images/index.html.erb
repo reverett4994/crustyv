@@ -1,7 +1,7 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Images</h1>
-<%=@images.count%>
+
+<h1>Listing <%=@sort%> Images</h1>
+
 
 <div class="flickr_pagination">
     <div class="page_info">
@@ -48,7 +48,7 @@
       <%else%>
         <%= image_tag image.girl.url,class:'gallery' %>
       <%end%>
-      <span class="text-content"><span><%=image.title%><br> Quality  : <%= rating_for image, 'quality', disable_after_rate: true %>Girl : <%= rating_for image, 'girl', disable_after_rate: true %></span></span>
+      <span class="text-content"><span><%=image.title%><br> Quality  : <%= rating_for image, 'quality', disable_after_rate: true %><br>Girl : <%= rating_for image, 'girl', disable_after_rate: true %></span></span>
     </div>
     <%end%>
   <%end%>

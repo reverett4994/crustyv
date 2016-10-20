@@ -1,7 +1,13 @@
-<%= simple_form_for @video do |i|%>
-  <%= i.error_notification %>
-  <%= i.input :title %>
-  <%= i.input :cat,label:'Category',collection:['Standerd','Lesbian/Solo','Blowjob','Forced Orgasm','Struggle Fuck','Other Bondage'] %>
-  <%= i.input :res,label:'Resolution',collection:['Sub SD','SD','HD'] %>
-  <%= i.button :submit %>
-<%end%>
+<div id=full_form>
+  <div class='form-inputs'>
+    <%= simple_form_for @video do |i|%>
+      <%= i.error_notification %>
+      <%= i.input :title %>
+      <%= i.input :cat,label:'Category',collection:['Standerd','Lesbian/Solo','Blowjob','Forced Orgasm','Struggle Fuck','Other Bondage'] %>
+      <%= i.input :res,label:'Resolution',collection:['Sub SD','SD','HD'] %>
+    </div>
+      <%= i.button :submit %><br>
+      <%= link_to 'Delete', @video, method: :delete, data: { confirm: 'Are you sure?' },class:'btn_destroy' %>
+
+    <%end%>
+</div>

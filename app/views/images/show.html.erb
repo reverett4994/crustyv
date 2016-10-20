@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 
 <%@girl = @image.girl.to_s%>
@@ -38,7 +37,13 @@
   <%else%>
     SFW
   <%end%>
-  <%=@image.cat%> <%=@image.res%> Picture
+  <%= link_to @image.cat, images_path(sort:@search) %>
+  <% if @image.res=='0' %>
+  <%else%>
+    <%=@image.res%>
+  <%end%>
+  Picture
 </div>
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<div id='foot_div'>
+<%= link_to 'Edit', edit_image_path(@image),class:'edit_link' %>
+</div>

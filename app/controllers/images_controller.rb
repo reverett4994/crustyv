@@ -34,6 +34,17 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
+    if @image.cat == 'Pretty Girls'
+      @search='pretty'
+    elsif @image.cat == 'Real Girls'
+      @search='real'
+    elsif @image.cat == 'Bondage'
+      @search='bondage'
+    elsif @image.cat == 'Blowjob'
+      @search='blowjob'
+    elsif @image.cat == 'Cumshot'
+      @search='cumshot'
+    end
 
   end
 
@@ -81,7 +92,7 @@ class ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

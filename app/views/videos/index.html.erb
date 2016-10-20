@@ -1,6 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Videos</h1>
+<h1>Listing <%=@sort%> Videos</h1>
 <div class="flickr_pagination">
     <div class="page_info">
       <%= page_entries_info @posts %>
@@ -33,11 +32,23 @@
   </tbody>
 </table>
 <%end%>
-<br>
+
+<div id="video_gallery">
+  <% @videos.each do |video|%>
+      <div class='video_link'>
+      <%= link_to video do %>
+        <%= video_tag video.movie.url,controls: false,class:'video_thumb' %>
+        <div class='desc'>
+          <%=video.title%>
+        </div>
+      </div>
+    <% end %>
+  <%end%>
+</div>
+
 <div class="flickr_pagination">
     <div class="page_info">
       <%= page_entries_info @posts %>
     </div>
     <%= will_paginate @posts, :container => false %>
   </div>
-<%= link_to 'New Video', new_video_path %>

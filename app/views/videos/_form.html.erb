@@ -1,23 +1,12 @@
-<%if false%>
-<%= simple_form_for(@video) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :cat %>
-    <%= f.input :res %>
-    <%= f.input :title %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-<%end%>
-<%= simple_form_for @video, url: videos_path do |i|%>
-  <%= i.error_notification %>
-  <%= i.input :title %>
-  <%= i.input :cat,label:'Category',collection:['Standerd','Lesbian/Solo','Blowjob','Forced Orgasm','Struggle Fuck','Other Bondage'] %>
-  <%= i.input :res,label:'Resolution',collection:['Sub SD','SD','HD'] %>
-  <%= i.input :movie, as: :file %>
-  <%= i.button :submit %>
-<%end%>
+<div id=full_form>
+  <div class='form-inputs'>
+    <%= simple_form_for @video, url: videos_path do |i|%>
+      <%= i.error_notification %>
+      <%= i.input :title %>
+      <%= i.input :cat,label:'Category',collection:['Standerd','Lesbian/Solo','Blowjob','Forced Orgasm','Struggle Fuck','Other Bondage'] %>
+      <%= i.input :res,label:'Resolution',collection:['Sub SD','SD','HD'] %>
+      <%= i.input :movie, as: :file %>
+    </div>
+    <%= i.button :submit %>
+    <%end%>
+</div>

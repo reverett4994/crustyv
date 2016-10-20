@@ -15,10 +15,21 @@
  *= require video-js
  */
 
+/* font-family: 'Dancing Script', cursive;  LOGO
+ font-family: 'Handlee', cursive;           DESCRIPTIONS
+ font-family: 'Roboto', sans-serif;         HEADERS/INFO
+
+
+ LG G3 IS 360x640??
+ */
+
 a{
   text-decoration: none;
   color: #333;
   text-decoration: underline;
+}
+a:hover{
+  color: #ff99ff;
 }
 body{
   height: 100%;
@@ -28,6 +39,11 @@ body{
 }
 h2{
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+h1{
+  text-align: center;
+  font-family: 'Handlee', cursive;
 }
  /*********************HEADER********************/
 
@@ -36,17 +52,21 @@ h2{
  	margin: 0;
  	padding: 0;
  	float: top;
- 	font-family: 'Handlee', cursive;
- }
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 1em;
+  padding-left: .5em;
+  padding-top: .5em;
+  }
+
  #head_links{
  	display: block;
  }
  #head_title{
  	font-family: 'Dancing Script', cursive;
- 	font-size: 3em;
+ 	font-size: 3.5em;
  	display: block;
- 	margin-right: 0px;
- }
+
+}
  #header a:hover{
  	color: white;
  }
@@ -58,6 +78,7 @@ h2{
      padding: 0;
      overflow: hidden;
      background-color: #333;
+     font-family: 'Roboto', sans-serif;
  }
 
  li {
@@ -106,6 +127,30 @@ h2{
 
 
  /*********************HEADER********************/
+
+
+ /*********************FLASHES********************/
+
+.notice{
+  text-align: center;
+  color: red;
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.alert{
+  text-align: center;
+  color: red;
+  font-size: 2em;
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+ /*********************FLASHES********************/
 
 
  /*********************GALLERY********************/
@@ -353,6 +398,69 @@ span.text-content span {
 /*********************IMAGE SHOW********************/
 
 
+/*********************VIDEO GALLERY********************/
+
+#video_gallery{
+  width: 85%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video_link{
+  display: inline-block;
+  width: 500px;
+  height: 300px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+.video_link:hover{
+  background-color:#ffccff;
+  border-right: 1px solid #333;
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+
+}
+
+.video_thumb{
+  width: 500px;
+  height: 300px;
+}
+.desc{
+  display: inline-block;
+  color: black;
+
+  margin-top: 0;
+  width: 500px;
+  font-size: 26px;
+  font-family: 'Roboto', sans-serif;
+  background-color:#ffccff;
+  border: 1px solid #333;
+}
+
+.edit_link{
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: 1px solid #333;
+  background-color:#ffccff;
+  padding-bottom: .3em;
+  width: 100%;
+  position: sticky;
+  bottom:0;
+  margin-bottom: 0;
+
+}
+.edit_link:hover{
+  color: white;
+}
+
+
+/*********************VIDEO GALLERY********************/
 
 
 /*********************FORM INPUTS********************/
@@ -362,6 +470,7 @@ span.text-content span {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 .form-inputs{
   display: block;
@@ -372,10 +481,87 @@ span.text-content span {
 .form-inputs label{
   display: block;
   text-align: left;
-
 }
 
 .form-inputs input{
   width: 100%;
   padding: 12px 20px;
+}
+
+.form-inputs select{
+  width: 105.5%;
+  padding: 12px 15px;
+}
+ .nsfw_input{
+  display: inline-block;
+  color: red;
+}
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ffb3ff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-bottom: 1em;
+  margin-top: .5em;
+}
+
+.btn:hover {background-color: #ff99ff}
+
+.btn:active {
+  background-color: #ff99ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.btn_destroy {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ffb3ff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  margin-bottom: 1em;
+  margin-top: .5em;
+}
+
+.btn_destroy:hover {
+  background-color: #ff99ff;
+  color: white;
+}
+
+.btn_destroy:active {
+  background-color: #ff99ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/*********************FORM INPUTS********************/
+
+
+
+/*********************MEDIA QUERIS********************/
+
+@media only screen and (max-width: 360px) {
+    /* For mobile phones: */
+    body {
+        background-color: red;
+    }
+    .gallery{
+      max-width: 360px;
+      height: 500px;
+    }
 }
