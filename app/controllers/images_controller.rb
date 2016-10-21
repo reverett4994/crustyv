@@ -27,6 +27,8 @@ class ImagesController < ApplicationController
         @images =Image.where('cat LIKE ?','Cumshot').order("RAND(#{@seed})").paginate(:page => params[:page])
       elsif @sort=='all'
         @images = Image.all.order("RAND(#{@seed})").paginate(:page => params[:page])
+      elsif @sort=='new'
+        @images =Image.order('created_at DESC').paginate(:page => params[:page])
 
       end
    end

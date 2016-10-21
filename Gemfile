@@ -57,3 +57,5 @@ gem 'ratyrate'
 gem 'videojs_rails'
 
 gem 'will_paginate', '~> 3.1.0'
+
+gem 'high_voltage', '~> 3.0.0'

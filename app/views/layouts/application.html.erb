@@ -14,13 +14,13 @@
 
   <div id="header">
 
-	<%= link_to 'CrustyV.XYZ',root_path, id: 'head_title'%>
+	<%= link_to 'CrustyV.XYZ',page_path('home'), id: 'head_title'%>
 
 </div>
 
 <% if user_signed_in? %>
   <ul>
-    <li><%= link_to 'Home', "#" %></li>
+    <li><%= link_to 'Home', page_path('home'),id:'home_link' %></li>
     <li class="dropdown">
       <a href="#" class="dropbtn">Pictures</a>
       <div class="dropdown-content">
@@ -30,6 +30,8 @@
         <%= link_to 'Bondage', images_path(sort:'bondage') %>
         <%= link_to 'BlowJob', images_path(sort:'blowjob') %>
         <%= link_to 'CumShot', images_path(sort:'cumshot') %>
+        <%= link_to 'Newist', images_path(sort:'new') %>
+
       </div>
     </li>
     <li class="dropdown">

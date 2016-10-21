@@ -187,9 +187,13 @@ h1{
 
 #full_gallery{
   width: 100%;
+  max-width: 1505px;
   height: 200%;
-  display: block;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
   overflow: auto;
+  text-align: center;
 }
 
 .gallery{
@@ -393,7 +397,6 @@ span.text-content span {
   text-align: center;
   color: #333;
   font-family: 'Handlee', cursive;
-
 }
 /*********************IMAGE SHOW********************/
 
@@ -406,6 +409,7 @@ span.text-content span {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1580px;
 }
 .video_link{
   display: inline-block;
@@ -553,15 +557,193 @@ span.text-content span {
 
 
 
-/*********************MEDIA QUERIS********************/
 
-@media only screen and (max-width: 360px) {
-    /* For mobile phones: */
-    body {
-        background-color: red;
+
+/*********************HOME PAGE********************/
+.home_div_filler{
+  height: 50px;
+  background-color: #333;
+  margin-top: -50px;
+}
+.home_div{
+  background-color: #ffccff;
+  color: #333;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.home_div h1{
+  margin: 0;
+  font-size: 45px;
+}
+.home_pic{
+  display: inline-block;
+  height: 601px;
+  width: 30%;
+  object-fit: cover;
+  object-position: 68% 50%;
+}
+.home_pic2{
+  display: inline-block;
+  height: 601px;
+  width: 30%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.home_video{
+  display: inline-block;
+  margin-bottom: 150px;
+  width: 30%;
+}
+.home_gif{
+  height: 253px;
+  width: auto;
+  display: inline-block;
+}
+.background-1{
+  background-image: url('home1.jpg');
+  min-height: 600px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-2{
+  background-image: url('home3.jpg');
+  min-height: 750px;
+  background-attachment: fixed;
+  background-position:center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-3{
+  background-image: url('home2.jpg');
+  min-height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************HOME PAGE********************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************MEDIA QUERIS********************/
+@media only screen and (max-width: 1515px) {
+    #full_gallery{
+      width: 1020px;
+      display: block;
+      overflow: none;
+    }
+  }
+  @media only screen and (max-width: 1020px) {
+      #full_gallery{
+        width: 600px;
+        display: block;
+        overflow: none;
+        text-align: center;
+      }
+    }
+
+@media only screen and (max-width: 1000px) {
+  .home_pic{
+    width: 49%
+  }
+  .home_pic2{
+    width: 49%;
+    object-position: 70% 50%;
+
+  }
+  .home_video{
+    display: none;
+  }
+  }
+@media only screen and (max-width: 570px) {
+      #video_gallery{
+        width: 100%;
+      }
+      .video_link{
+        width: 100%;
+        margin-left: 0;
+      }
+      .video_thumb{
+        width: 100%;
+      }
+      .desc{
+        width: 100%;
+      }
+
+    }
+@media only screen and (max-width: 520px) {
+    #full_gallery{
+      width: 100%;
+      height: 200%;
+      display: block;
+      overflow: none;
     }
     .gallery{
-      max-width: 360px;
-      height: 500px;
+      width: 100%;
+      height: 375px;
+      margin: 0;
+      float: left;
+      object-fit: cover;
+      object-position: 50% 25%;
     }
+    .gallery_link{
+      width: 100%;
+      height: 375px;
+      display: inline-block;
+      float: left;
+    }
+    span.text-content {
+      margin-left: 105px;
+      margin-top:  120px;
+    }
+    .modal-content {
+       height: auto;
+       width: auto;
+       object-fit: cover;
+       overflow: scroll;
+    }
+    #home_link{
+      display: none;
+    }
+  }
+@media only screen and (max-width: 360px) {
+    /* For mobile phones: */
+    #head_title{
+     font-size: 3.3em;
+   }
+   li a, .dropbtn {
+     padding: 14px 14px;
+   }
+   #des{
+     font-size: 2.5em;
+     text-align: center;
+   }
+
 }

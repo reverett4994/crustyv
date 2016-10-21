@@ -1,9 +1,9 @@
 <div id=full_form>
   <div class='form-inputs'>
     <%= simple_form_for @image, url: images_path do |i|%>
-      <%= i.input :title %>
+      <%= i.input :title,placeholder:'Title to Describe Picture' %>
       <%= i.input :cat,label:'Category',collection:['Pretty Girls','Real Girls','Blowjob','Cumshot','Bondage'] %>
-      <%= i.input :res,label:'Resolution' %>
+      <%= i.input :res,label:'Resolution',placeholder:'Resolution of Picture Ex. 1440x1080' %>
       <%= i.input :girl, as: :file %>
     </div>
     <%= i.input :nsfw,label:'NSFW?',class:'nsfw_input' %>
