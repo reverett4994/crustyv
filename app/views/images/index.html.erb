@@ -38,20 +38,38 @@
   </tbody>
 </table>
 <%end%>
+<%@counter=0%>
 <div id='full_gallery'>
   <%@images.each do |image| %>
-  <div class='gallery_link'>
-  <%= link_to image do %>
-      <%@girl = image.girl.to_s%>
-      <% if @girl.include? "mp4"%>
-        <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,class:'gallery' %>
-      <%else%>
-        <%= image_tag image.girl.url,class:'gallery' %>
+
+  <%if @counter <8 %>
+    <div class='gallery_link'>
+    <%= link_to image do %>
+        <%@girl = image.girl.to_s%>
+        <% if @girl.include? "mp4"%>
+          <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,class:'gallery' %>
+        <%else%>
+          <%= image_tag image.girl.url,class:'gallery' %>
+        <%end%>
+        <span class="text-content"><span><%=image.title%><br> Quality  : <%= rating_for image, 'quality', disable_after_rate: true %><br>Girl : <%= rating_for image, 'girl', disable_after_rate: true %></span></span>
+      </div>
       <%end%>
-      <span class="text-content"><span><%=image.title%><br> Quality  : <%= rating_for image, 'quality', disable_after_rate: true %><br>Girl : <%= rating_for image, 'girl', disable_after_rate: true %></span></span>
-    </div>
+      <%@counter+=1%>
+    <%else%>
+    <div class='gallery_link' id="last_gallery_link">
+    <%= link_to image do %>
+        <%@girl = image.girl.to_s%>
+        <% if @girl.include? "mp4"%>
+          <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,class:'gallery',id:'last' %>
+        <%else%>
+          <%= image_tag image.girl.url,class:'gallery',id:'last' %>
+        <%end%>
+        <span class="text-content"><span><%=image.title%><br> Quality  : <%= rating_for image, 'quality', disable_after_rate: true %><br>Girl : <%= rating_for image, 'girl', disable_after_rate: true %></span></span>
+      </div>
+      <%end%>
+      <%@counter+=1%>
+      <%end%>
     <%end%>
-  <%end%>
 </div>
 <div class="flickr_pagination">
     <div class="page_info">
