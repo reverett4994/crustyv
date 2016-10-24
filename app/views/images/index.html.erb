@@ -47,7 +47,7 @@
     <%= link_to image do %>
         <%@girl = image.girl.to_s%>
         <% if @girl.include? "mp4"%>
-          <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,class:'gallery' %>
+          <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,muted: true,class:'gallery' %>
         <%else%>
           <%= image_tag image.girl.url,class:'gallery' %>
         <%end%>
@@ -60,7 +60,7 @@
     <%= link_to image do %>
         <%@girl = image.girl.to_s%>
         <% if @girl.include? "mp4"%>
-          <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,class:'gallery',id:'last' %>
+          <%= video_tag image.girl.url,controls: false,loop:true,autoplay:true,muted: true,class:'gallery',id:'last' %>
         <%else%>
           <%= image_tag image.girl.url,class:'gallery',id:'last' %>
         <%end%>

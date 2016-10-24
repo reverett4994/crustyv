@@ -2,7 +2,7 @@
 
 <%@girl = @image.girl.to_s%>
 <% if @girl.include? "mp4"%>
-  <%= video_tag @image.girl.url,controls: false,loop:true,autoplay:true,class:"show_pic" %>
+  <%= video_tag @image.girl.url,controls: false,loop:true,autoplay:true,muted: true,class:"show_pic" %>
 
 <%else%>
   <!-- Trigger the Modal -->
