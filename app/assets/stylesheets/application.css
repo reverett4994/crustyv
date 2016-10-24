@@ -600,8 +600,7 @@ span.text-content span {
   display: inline-block;
 }
 .background-1{
-  /*background-image: url('home1.jpg');*/
-  background-image: url(image-path('home1.jpg'));
+  background-image: url('home1.jpg');
   min-height: 600px;
   background-attachment: fixed;
   background-position: center;
@@ -609,9 +608,7 @@ span.text-content span {
   background-size: cover;
 }
 .background-2{
-/*  background-image: url('home3.jpg');*/
-  background-image: url(image-path('home3.jpg'));
-
+  background-image: url('home3.jpg');
   min-height: 750px;
   background-attachment: fixed;
   background-position:center bottom;
@@ -619,8 +616,7 @@ span.text-content span {
   background-size: cover;
 }
 .background-3{
-/*  background-image: url('home2.jpg');*/
-  background-image: url(image-path('home2.jpg'));
+  background-image: url('home2.jpg');
   min-height: 700px;
   background-attachment: fixed;
   background-position: center;

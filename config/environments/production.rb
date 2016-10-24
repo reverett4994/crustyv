@@ -81,4 +81,9 @@ Rails.application.configure do
 #ADDED THINK THIS IS RIGHT BUT NOT SURE FROM DEVISE
   config.assets.initialize_on_precompile = false
 
+
+  # added in hoped to bring search icon to text box in heroku IT WORKED !!!!!!!!!!!!!!!!!!
+config.serve_static_assets = true
+config.assets.compile = true
+
 end
